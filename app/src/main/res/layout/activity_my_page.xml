@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:paddingLeft="15dp"
+            android:background="@color/main_white"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_text"
+                android:textSize="18sp"
+                android:text="1111111"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_user_name"
+                android:layout_marginTop="7dp"
+                android:textSize="12sp"
+                android:textColor="#999999"
+                android:text="1111111111111"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_head_right"/>
+
+            <ImageView
+                android:id="@+id/iv_head_right"
+                style="@style/myItemIcon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/myItem"
+            android:layout_marginTop="7dp">
+
+            <ImageView
+                android:id="@+id/iv_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_collection" />
+
+            <TextView
+                style="@style/myItemText"
+                android:layout_toRightOf="@+id/iv_collection"
+                android:text="我的收藏" />
+
+            <ImageView style="@style/myItemIcon" />
+        </RelativeLayout>
+
+        <include layout="@layout/item_divider_line" />
+
+        <RelativeLayout style="@style/myItem">
+
+            <ImageView
+                android:id="@+id/iv_shopping_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_shoppingcar" />
+
+            <TextView
+                style="@style/myItemText"
+                android:layout_toRightOf="@+id/iv_shopping_car"
+                android:text="我的购物车" />
+
+            <ImageView style="@style/myItemIcon" />
+        </RelativeLayout>
+
+        <include layout="@layout/item_divider_line" />
+
+        <RelativeLayout style="@style/myItem">
+
+            <ImageView
+                android:id="@+id/iv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_order" />
+
+            <TextView
+                style="@style/myItemText"
+                android:layout_toRightOf="@+id/iv_order"
+                android:text="我的订单" />
+
+            <ImageView style="@style/myItemIcon" />
+        </RelativeLayout>
+
+        <include layout="@layout/item_divider_line" />
+
+        <RelativeLayout style="@style/myItem">
+
+            <ImageView
+                android:id="@+id/iv_question_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_question_bank" />
+
+            <TextView
+                style="@style/myItemText"
+                android:layout_toRightOf="@+id/iv_question_bank"
+                android:text="我的题库" />
+
+            <ImageView style="@style/myItemIcon" />
+        </RelativeLayout>
+
+        <include layout="@layout/item_divider_line" />
+
+        <RelativeLayout
+            style="@style/myItem"
+            android:layout_marginTop="7dp">
+
+            <ImageView
+                android:id="@+id/iv_about_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_about_us" />
+
+            <TextView
+                style="@style/myItemText"
+                android:layout_toRightOf="@+id/iv_about_us"
+                android:text="关于我们" />
+
+            <ImageView style="@style/myItemIcon" />
+        </RelativeLayout>
+
+        <include layout="@layout/item_divider_line" />
+
+        <RelativeLayout
+            style="@style/myItem"
+            android:layout_marginTop="7dp">
+
+            <ImageView
+                android:id="@+id/iv_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_logout" />
+
+            <TextView
+                style="@style/myItemText"
+                android:layout_toRightOf="@+id/iv_logout"
+                android:text="退出登录" />
+
+            <ImageView style="@style/myItemIcon" />
+        </RelativeLayout>
+
+        <include layout="@layout/item_divider_line" />
+    </LinearLayout>
+</LinearLayout>

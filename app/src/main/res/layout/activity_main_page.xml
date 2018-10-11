@@ -1,28 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <FrameLayout
+            android:id="@+id/frag_main"
+            android:layout_above="@+id/ll_bottom_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
 
         <LinearLayout
+            android:id="@+id/ll_bottom_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:background="@color/main_bg">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content">
+                android:id="@+id/ll_home_page"
+                style="@style/homeBtnStyle">
+
+                <ImageView
+                    android:id="@+id/iv_home_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home" />
 
                 <TextView
+                    android:id="@+id/tv_home_page"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="主页"
+                    android:textColor="@color/main_blue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_study"
+                style="@style/homeBtnStyle">
+
+                <ImageView
+                    android:id="@+id/iv_study"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/un_study" />
+
+                <TextView
+                    android:id="@+id/tv_study"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="学习情况"
+                    android:textColor="#999999" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_has_buy"
+                style="@style/homeBtnStyle">
+
+                <ImageView
+                    android:id="@+id/iv_has_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/un_has_buy" />
+
+                <TextView
+                    android:id="@+id/tv_has_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="已购课程"
+                    android:textColor="#999999" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_my_page"
+                style="@style/homeBtnStyle">
+
+                <ImageView
+                    android:id="@+id/iv_my_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/un_my" />
+
+                <TextView
+                    android:id="@+id/tv_my_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="我的"
+                    android:textColor="#999999" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

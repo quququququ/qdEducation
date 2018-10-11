@@ -6,4 +6,5 @@
     <color name="main_bg">#F8F8F8</color>
     <color name="main_text">#333333</color>
     <color name="main_white">#ffffff</color>
+    <color name="main_blue">#6692ff</color>
 </resources>

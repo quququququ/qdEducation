@@ -25,6 +25,8 @@ public class RetrofitClient {
                 .addConverterFactory(JsonConverterFactory.create())
 
                 .build();
+
+
     }
 
     public static Retrofit getRetrofit(Context context) {

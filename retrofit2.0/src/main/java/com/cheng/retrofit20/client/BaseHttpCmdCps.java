@@ -3,6 +3,8 @@ package com.cheng.retrofit20.client;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.cheng.retrofit20.ApiService;
+
 import java.util.Map;
 
 import retrofit2.Call;

@@ -34,4 +34,23 @@
         <item name="android:src">@drawable/arrowmore</item>
     </style>
 
+    //Edittext文字样式
+    <style name="inputStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">#a5a5a5</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    //首页按钮Linearlayout
+    <style name="homeBtnStyle">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

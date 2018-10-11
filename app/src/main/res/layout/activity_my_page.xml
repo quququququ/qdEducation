@@ -47,6 +47,7 @@
         </RelativeLayout>
 
         <RelativeLayout style="@style/myItem"
+            android:id="@+id/rl_my_collection"
             android:layout_marginTop="7dp">
 
             <ImageView

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.qupengcheng.qingdaoeducation.R;
 
 import activity.MyCollecttionActivity;
+import activity.MyOrderActivity;
 
 /**
  * Created by qupengcheng on 2018/10/11.
@@ -40,9 +41,17 @@ public class MyPageFragment extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.rl_my_collection:
-                Intent intent = new Intent(getActivity(), MyCollecttionActivity.class);
-                startActivity(intent);
+                jumpNextActivity(MyCollecttionActivity.class);
+                break;
+            case R.id.rl_my_order:
+                jumpNextActivity(MyOrderActivity.class);
                 break;
         }
+    }
+
+    private void jumpNextActivity(Class activityClass) {
+        Intent it = new Intent();
+        it.setClass(getActivity(), activityClass);
+        startActivity(it);
     }
 }

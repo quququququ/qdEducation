@@ -12,6 +12,6 @@ public class BaseHttpRequest<T> {
 
     public interface IRequestListener<T> {
         void onSuccess(T data);
-        void onFailed(String msg, int code);
+        void onFailed(String msg, String code);
     }
 }

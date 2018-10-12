@@ -13,7 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.cheng.retrofit20.client.BaseHttpRequest;
+import com.cheng.retrofit20.client.BaseHttpResult;
 import com.example.qupengcheng.qingdaoeducation.R;
+
+import net.TestRequest;
 
 import fragment.HasBuyFragment;
 import fragment.HomePageFragment;
@@ -42,6 +46,23 @@ public class MainHomeActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_main_page);
 
         initView();
+        initData();
+    }
+
+    private void initData() {
+        TestRequest mRequest = new TestRequest(this);
+        mRequest.setListener(new BaseHttpRequest.IRequestListener<BaseHttpResult>() {
+            @Override
+            public void onSuccess(BaseHttpResult data) {
+
+            }
+
+            @Override
+            public void onFailed(String msg, int code) {
+
+            }
+        });
+        mRequest.requestVesionControl("111");
     }
 
     private void initView() {

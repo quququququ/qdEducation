@@ -8,25 +8,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.cheng.retrofit20.client.BaseHttpRequest;
 import com.example.qupengcheng.qingdaoeducation.R;
-
-import net.MyCollectionRequest;
-
-import java.util.HashMap;
 
 import adapter.MyCollectionAdapter;
 import cn.bingoogolapple.refreshlayout.BGAMeiTuanRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
-import data.MyCollectionData;
 
 /**
- * Created by qupengcheng on 2018/10/11.
+ * Created by qupengcheng on 2018/10/12.
  */
 
-public class MyCollecttionActivity extends AppCompatActivity implements BGARefreshLayout.BGARefreshLayoutDelegate{
+public class MyOrderActivity extends AppCompatActivity implements BGARefreshLayout.BGARefreshLayoutDelegate{
     private LinearLayout llCourse,llArticle;
     private TextView tvCourse,tvArticle,tvCourseLine,tvArticleLine;
     private MyCollectionAdapter mAdapter;
@@ -86,55 +79,15 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
                 isLoad = false;
                 isFirst = true;
                 page = 1;
-                initData();
 
             }
         });
     }
 
     private void initData() {
-        HashMap<String,Object> map = new HashMap<>();
-        map.put("a","111");
-        map.put("b","222");
-        map.put("c","333");
 
-        HashMap<String,Object> hashMap = new HashMap<>();
-        hashMap.put("d",map);
-
-        map.toString();
-
-        MyCollectionRequest mRequest = new MyCollectionRequest(this);
-        mRequest.setListener(new BaseHttpRequest.IRequestListener<MyCollectionData>() {
-            @Override
-            public void onSuccess(MyCollectionData data) {
-                if (isLoad) {
-                    isLoad = false;
-                    if (data.getData().size() < 10)
-                        needLoad = false;
-                    else
-                        needLoad = true;
-                    mAdapter.setLoadData(data.getData());
-                    bgaRefreshLayout.endRefreshing();
-                    bgaRefreshLayout.endLoadingMore();
-                    return;
-                }
-                mAdapter.clearData();
-                mAdapter.setData(data.getData());
-                if (data.getData().size() < 10)
-                    needLoad = false;
-                else
-                    needLoad = true;
-                bgaRefreshLayout.endRefreshing();
-                bgaRefreshLayout.endLoadingMore();
-            }
-
-            @Override
-            public void onFailed(String msg, String code) {
-                Toast.makeText(MyCollecttionActivity.this,msg,Toast.LENGTH_SHORT).show();
-            }
-        });
-        mRequest.requestMyCollection("");
     }
+
 
     @Override
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
@@ -143,7 +96,6 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
         page = 1;
         initData();
     }
-
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {

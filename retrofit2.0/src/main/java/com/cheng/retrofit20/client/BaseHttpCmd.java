@@ -32,6 +32,7 @@ public class BaseHttpCmd extends HttpCommand {
         if (params == null) {
             params = new RequestParams();
         }
+
 //        String sessionId = HttpConfig.newInstance(context).getAccessToken();
 //        String version = HttpConfig.newInstance(context).getVersion();
 //        params.add(KEY_PARAM_SESSION_ID, sessionId);

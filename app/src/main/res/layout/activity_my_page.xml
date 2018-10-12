@@ -86,7 +86,9 @@
 
         <include layout="@layout/item_divider_line" />
 
-        <RelativeLayout style="@style/myItem">
+        <RelativeLayout
+            android:id="@+id/rl_my_order"
+            style="@style/myItem">
 
             <ImageView
                 android:id="@+id/iv_order"

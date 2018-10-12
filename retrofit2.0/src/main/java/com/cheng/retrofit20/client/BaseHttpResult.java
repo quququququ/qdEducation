@@ -6,30 +6,31 @@ import java.io.Serializable;
  * Created by wumengmeng on 2016/7/16/0016.
  */
 public class BaseHttpResult implements Serializable {
-    private int status;
-    private String msg;
+    private String return_code;
+    private String return_msg;
 
-    public int getStatus() {
-        return status;
+    public String getReturn_code() {
+        return return_code;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setReturn_code(String return_code) {
+        this.return_code = return_code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getReturn_msg() {
+        return return_msg;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setReturn_msg(String return_msg) {
+        this.return_msg = return_msg;
     }
+
 
     @Override
     public String toString() {
         return "BaseHttpResult{" +
-                "code=" + status +
-                ", msg='" + msg + '\'' +
+                "return_code='" + return_code + '\'' +
+                ", return_msg='" + return_msg + '\'' +
                 '}';
     }
 }

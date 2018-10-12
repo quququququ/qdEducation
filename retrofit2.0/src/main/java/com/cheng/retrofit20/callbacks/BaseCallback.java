@@ -18,32 +18,27 @@ public abstract class BaseCallback<T extends BaseHttpResult> implements Callback
         if (response.code() == 200 && response.isSuccessful()) {
 
 
-            int code = response.body().getStatus();
+            String code = response.body().getReturn_code();
 
-            if (code == 1 || code == 21 || code == 22 || code == 5 || code == 17 || code == 14 || code == 19 || code == 40|| code == 48) {
-                if (code == 17) {
-                    onLogin();
-                } else {
+            if (code.equals("SUCCESS")) {
                     onSuccess(response);
-                }
             } else {
-                onFailed(response.body().getMsg(), code);
+                onFailed(response.body().getReturn_msg(), code);
             }
 
         } else {
-            onFailed("请求失败", -1000);
+            onFailed("请求失败", "-1000");
         }
     }
 
     @Override
     public void onFailure(Call<T> call, Throwable t) {
         Log.e("onResponse", "---error = " + t.getMessage());
-        onFailed("请求失败", -1001);
+        onFailed("请求失败", "-1001");
     }
 
     public abstract void onSuccess(Response<T> response);
 
-    public abstract void onFailed(String msg, int code);
+    public abstract void onFailed(String msg, String code);
 
-    public abstract void onLogin();
 }

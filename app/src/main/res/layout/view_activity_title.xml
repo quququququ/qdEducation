@@ -3,7 +3,7 @@
     android:id="@id/layout_title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#A0A0A0">
+    android:background="@color/main_bg">
 
     <RelativeLayout
         android:id="@+id/title_inner_layout"

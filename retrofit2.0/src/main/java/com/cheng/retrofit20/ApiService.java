@@ -3,6 +3,9 @@ package com.cheng.retrofit20;
 
 import com.cheng.retrofit20.client.BaseHttpResult;
 import com.cheng.retrofit20.data.MyCollectionResult;
+import com.cheng.retrofit20.data.MyOrderResult;
+import com.cheng.retrofit20.data.RandomCodeResult;
+import com.cheng.retrofit20.data.RegisterResult;
 
 import java.util.Map;
 
@@ -26,9 +29,27 @@ public interface ApiService {
     Call<BaseHttpResult> getVersionControl(@FieldMap Map<String, String> params);
 
     /**
+     * 注册
+     */
+    @POST("api/account/Register")
+    Call<RegisterResult> getToRegister(@Body String params);
+
+    /**
+     * 获取验证码
+     */
+    @POST("api/account/SendRandomCode")
+    Call<RandomCodeResult> getRandomCode(@Body String params);
+
+    /**
      * 我的收藏
      */
-    @POST(" ")
+    @POST("api/Collection/MyCollection")
     Call<MyCollectionResult> getMyCollection(@Body String params);
+
+    /**
+     * 我的订单
+     */
+    @POST("api/account/MyOrders")
+    Call<MyOrderResult> getMyOrder(@Body String params);
 
 }

@@ -19,7 +19,7 @@ public class RetrofitClient {
                 .client(OkHttpFactory.getOkHttpClient(context))
 
                         //baseUrl
-                .baseUrl("http://app.tonglepai.cn/")
+                .baseUrl("http://2nz1067951.iask.in:49206/")
 
                         //gson转化器
                 .addConverterFactory(JsonConverterFactory.create())

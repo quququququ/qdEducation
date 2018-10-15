@@ -6,43 +6,43 @@ import com.cheng.retrofit20.callbacks.BaseCallback;
 import com.cheng.retrofit20.client.BaseHttpRequest;
 import com.cheng.retrofit20.client.HttpCommand;
 import com.cheng.retrofit20.client.RequestParams;
-import com.cheng.retrofit20.data.MyCollectionResult;
-import com.cheng.retrofit20.http.MyCollectionCmd;
+import com.cheng.retrofit20.data.RandomCodeResult;
+import com.cheng.retrofit20.http.GetRandomCodeCmd;
 
-import data.MyCollectionData;
+import data.RandomCodeData;
 import retrofit2.Response;
 
 /**
  * Created by qupengcheng on 2018/10/11.
  */
 
-public class MyCollectionRequest extends BaseHttpRequest<MyCollectionData> {
+public class RandomCodeRequest extends BaseHttpRequest<RandomCodeData> {
 
     private Context mContext;
 
-    public MyCollectionRequest(Context context) {
+    public RandomCodeRequest(Context context) {
         this.mContext = context;
     }
 
 
-    public void requestMyCollection(String data) {
+    public void requestRandomCode(String data) {
         HttpCommand httpCmd = newHttpCommand(data);
         httpCmd.execute();
     }
 
     private RequestParams getParams(String data) {
         RequestParams parameters = new RequestParams();
-        parameters.putParams(MyCollectionCmd.BODY, data);
+        parameters.putParams(GetRandomCodeCmd.KEY_BODY, data);
         return parameters;
     }
 
     private HttpCommand newHttpCommand(String data) {
-        HttpCommand httpCmd = new MyCollectionCmd(mContext, getParams(data));
-        httpCmd.setCallback(new BaseCallback<MyCollectionResult>() {
+        HttpCommand httpCmd = new GetRandomCodeCmd(mContext, getParams(data));
+        httpCmd.setCallback(new BaseCallback<RandomCodeResult>() {
             @Override
-            public void onSuccess(Response<MyCollectionResult> response) {
+            public void onSuccess(Response<RandomCodeResult> response) {
                 if (null != mListener) {
-                    mListener.onSuccess(new MyCollectionBinding(response.body(), mContext).getUiData());
+                    mListener.onSuccess(new RandomCodeBinding(response.body(), mContext).getUiData());
                 }
             }
 

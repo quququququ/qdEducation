@@ -5,22 +5,28 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.cheng.retrofit20.client.BaseHttpRequest;
 import com.example.qupengcheng.qingdaoeducation.R;
 
 import net.MyCollectionRequest;
 
+import java.util.Date;
 import java.util.HashMap;
 
 import adapter.MyCollectionAdapter;
 import cn.bingoogolapple.refreshlayout.BGAMeiTuanRefreshViewHolder;
+import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import data.MyCollectionData;
+import tools.MD5tools;
+import tools.TimeUTCUtils;
 
 /**
  * Created by qupengcheng on 2018/10/11.
@@ -34,6 +40,7 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
     private BGARefreshLayout bgaRefreshLayout;
     private boolean isFirst,isLoad,needLoad;
     private int page = 1;
+    private String sqlString ="documenttype=1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +48,18 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
         setContentView(R.layout.activity_my_collection);
 
         initView();
-        initData();
+        try {
+            initData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void initView() {
 
         bgaRefreshLayout = (BGARefreshLayout) findViewById(R.id.bga_collection);
         bgaRefreshLayout.setDelegate(this);
-        bgaRefreshLayout.setRefreshViewHolder(new BGAMeiTuanRefreshViewHolder(this,true));
+        bgaRefreshLayout.setRefreshViewHolder(new BGANormalRefreshViewHolder(this,true));
 
         mAdapter = new MyCollectionAdapter(this);
         rvCollection = (RecyclerView) findViewById(R.id.rv_collection);
@@ -72,7 +83,12 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
                 isLoad = false;
                 isFirst = true;
                 page = 1;
-                initData();
+                sqlString ="documenttype=1";
+                try {
+                    initData();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -86,22 +102,34 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
                 isLoad = false;
                 isFirst = true;
                 page = 1;
-                initData();
+                sqlString = "documenttype=2";
+                try {
+                    initData();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
         });
     }
 
-    private void initData() {
+    private void initData() throws Exception {
         HashMap<String,Object> map = new HashMap<>();
-        map.put("a","111");
-        map.put("b","222");
-        map.put("c","333");
+        map.put("appId","123456");
+        map.put("timestamp", TimeUTCUtils.getUTCTimeStr());
+        map.put("nonce_str", MD5tools.getNonceStr());
+        map.put("sign",MD5tools.getSigh("",""));
+
+        HashMap<String,Object> requestMain = new HashMap<>();
+        requestMain.put("CurrentIndex",page);
+        requestMain.put("PageSize","10");
+        requestMain.put("SQLStr",sqlString);
 
         HashMap<String,Object> hashMap = new HashMap<>();
-        hashMap.put("d",map);
+        hashMap.put("AppSignModel",map);
+        hashMap.put("sessionkey","26ea70c5cea4c244e2dbdb0b8d7c1aac");
+        hashMap.put("PageCondition",requestMain);
 
-        map.toString();
 
         MyCollectionRequest mRequest = new MyCollectionRequest(this);
         mRequest.setListener(new BaseHttpRequest.IRequestListener<MyCollectionData>() {
@@ -133,7 +161,7 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
                 Toast.makeText(MyCollecttionActivity.this,msg,Toast.LENGTH_SHORT).show();
             }
         });
-        mRequest.requestMyCollection("");
+        mRequest.requestMyCollection(JSON.toJSONString(hashMap));
     }
 
     @Override
@@ -141,7 +169,11 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
         isLoad = false;
         isFirst = true;
         page = 1;
-        initData();
+        try {
+            initData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -151,7 +183,11 @@ public class MyCollecttionActivity extends AppCompatActivity implements BGARefre
         isFirst = false;
         page++;
         if (needLoad) {
-            initData();
+            try {
+                initData();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return true;
         } else {
             return false;

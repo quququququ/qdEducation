@@ -69,15 +69,16 @@ public class JsonConverterFactory extends Converter.Factory {
                 JSONObject jsonObject = new JSONObject(responseBodyStr);
 
 //                JSONObject jsonObject = new JSONObject(value.string());
-//                json = jsonObject.toString();
-                int code = (int) jsonObject.get("status");
-                if (code != 1 && code != 19 && code != 48) {
-                    //code 不是成功 这个时候 data就是异常的情况 直接替换掉
-                    responseBodyStr = responseBodyStr.replace("data", "dataerror");
-                }
+                json = jsonObject.toString();
 
-                JSONObject jsonObject1 = new JSONObject(responseBodyStr);
-                json = jsonObject1.toString();
+//                int code = (int) jsonObject.get("status");
+//                if (code != 1 && code != 19 && code != 48) {
+//                    //code 不是成功 这个时候 data就是异常的情况 直接替换掉
+//                    responseBodyStr = responseBodyStr.replace("data", "dataerror");
+//                }
+//
+//                JSONObject jsonObject1 = new JSONObject(responseBodyStr);
+//                json = jsonObject1.toString();
 
             } catch (JSONException e) {
                 e.printStackTrace();

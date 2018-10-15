@@ -70,14 +70,14 @@ public class OkHttpFactory {
                                         res = res.substring(1, res.length() - 1);
                                     }
                                     JSONObject jobj = new JSONObject(res);
-                                    final int code = jobj.getInt("status");
-                                    String msg = jobj.getString("msg");
-                                    if (code == -1) {
+//                                    final int code = jobj.getInt("status");
+//                                    String msg = jobj.getString("msg");
+//                                    if (code == -1) {
 //                                        Intent intent = new Intent();
 //                                        intent.setAction("com.homedo.update");
 //                                        intent.putExtra("msg", msg);
 //                                        context.sendBroadcast(intent);
-                                    }
+//                                    }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }

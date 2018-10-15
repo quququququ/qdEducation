@@ -11,9 +11,13 @@ import android.widget.TextView;
 
 import com.example.qupengcheng.qingdaoeducation.R;
 
+import java.util.HashMap;
+
 import adapter.MyCollectionAdapter;
 import cn.bingoogolapple.refreshlayout.BGAMeiTuanRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
+import tools.MD5tools;
+import tools.TimeUTCUtils;
 
 /**
  * Created by qupengcheng on 2018/10/12.
@@ -34,7 +38,11 @@ public class MyOrderActivity extends AppCompatActivity implements BGARefreshLayo
         setContentView(R.layout.activity_my_collection);
 
         initView();
-        initData();
+        try {
+            initData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void initView() {
@@ -65,7 +73,11 @@ public class MyOrderActivity extends AppCompatActivity implements BGARefreshLayo
                 isLoad = false;
                 isFirst = true;
                 page = 1;
-                initData();
+                try {
+                    initData();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -84,7 +96,23 @@ public class MyOrderActivity extends AppCompatActivity implements BGARefreshLayo
         });
     }
 
-    private void initData() {
+    private void initData() throws Exception {
+        HashMap<String,Object> map = new HashMap<>();
+        map.put("appid","123456");
+        map.put("timestamp", TimeUTCUtils.getUTCTimeStr());
+        map.put("nonce_str", MD5tools.getNonceStr());
+        map.put("sign",MD5tools.getSigh("",""));
+
+        HashMap<String,Object> requestMain = new HashMap<>();
+        requestMain.put("currentindex","1");
+        requestMain.put("pagesize","10");
+        requestMain.put("sqlstr","333");
+
+        HashMap<String,Object> hashMap = new HashMap<>();
+        hashMap.put("appsignmodel",map);
+        hashMap.put("sessinkey","0af61531c6c04ac4ac910d0cd59e6238");
+        hashMap.put("pageconditon",requestMain);
+
 
     }
 
@@ -94,7 +122,11 @@ public class MyOrderActivity extends AppCompatActivity implements BGARefreshLayo
         isLoad = false;
         isFirst = true;
         page = 1;
-        initData();
+        try {
+            initData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -103,7 +135,11 @@ public class MyOrderActivity extends AppCompatActivity implements BGARefreshLayo
         isFirst = false;
         page++;
         if (needLoad) {
-            initData();
+            try {
+                initData();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return true;
         } else {
             return false;

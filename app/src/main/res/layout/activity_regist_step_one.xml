@@ -11,11 +11,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:src="@drawable/icon_collection" />
+            android:src="@drawable/reg_mobile" />
 
         <EditText
+            android:id="@+id/et_phone"
             android:layout_toRightOf="@+id/iv_collection"
             android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="手机号"
             style="@style/inputStyle"/>
     </RelativeLayout>
@@ -29,12 +32,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:src="@drawable/icon_collection" />
+            android:src="@drawable/reg_ver" />
 
         <EditText
+            android:id="@+id/et_random_code"
             android:layout_toRightOf="@+id/iv_psw"
             android:layout_marginLeft="10dp"
             android:hint="输入验证码"
+            android:layout_height="match_parent"
+            android:paddingRight="20dp"
             style="@style/inputStyle"/>
         
         <TextView
@@ -45,10 +51,12 @@
             android:layout_height="20dp"
             android:background="#a5a5a5"/>
         
-        <TextView
+        <Button
             android:id="@+id/tv_get_code"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@null"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:layout_alignParentRight="true"
@@ -59,6 +67,7 @@
     <include layout="@layout/item_divider_line"/>
 
     <Button
+        android:id="@+id/btn_to_next"
         android:layout_width="200dp"
         android:layout_marginTop="22dp"
         android:layout_gravity="center_horizontal"

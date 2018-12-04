@@ -12,8 +12,7 @@ public class MyCollectionResult extends BaseHttpResult {
 
 
     /**
-     * return_msg : null
-     * BaseResponseResult : {"result_code":"SUCCESS","result_msg":null,"Data":[{"DocumentCode":"","DocumentType":2,"Title":"我是文章","Picture":"我是文章","Remark":null,"AbilityItemCode":80,"AbilityItemName":"语法","CategoryCode":1,"CategoryName":"yasi","Level":1,"Price":10.7}]}
+     * BaseResponseResult : {"result_code":"SUCCESS","result_msg":"","Data":[{"DocumentCode":"541a2312-aa5e-49ed-af36-fa4b3e7d0e4c","DocumentType":1,"Title":"THE LITTLE ICE AGE","Summary":"我是文章概述。","Picture":null,"Remark":null,"AbilityItemCode":0,"AbilityItemName":null,"CategoryCode":0,"CategoryName":null,"Level":1,"Price":10.699999809265137,"CreateDate":"2018-10-09T13:48:32.34"},{"DocumentCode":"e737109c-81de-4a6d-bf7d-58443cea2e00","DocumentType":1,"Title":"阅读理解第一篇","Summary":"当我还很小的时候","Picture":null,"Remark":null,"AbilityItemCode":0,"AbilityItemName":null,"CategoryCode":0,"CategoryName":null,"Level":1,"Price":0,"CreateDate":"2018-10-09T13:57:15.713"}]}
      */
 
     private BaseResponseResultBean BaseResponseResult;
@@ -29,8 +28,8 @@ public class MyCollectionResult extends BaseHttpResult {
     public static class BaseResponseResultBean {
         /**
          * result_code : SUCCESS
-         * result_msg : null
-         * Data : [{"DocumentCode":"","DocumentType":2,"Title":"我是文章","Picture":"我是文章","Remark":null,"AbilityItemCode":80,"AbilityItemName":"语法","CategoryCode":1,"CategoryName":"yasi","Level":1,"Price":10.7}]
+         * result_msg :
+         * Data : [{"DocumentCode":"541a2312-aa5e-49ed-af36-fa4b3e7d0e4c","DocumentType":1,"Title":"THE LITTLE ICE AGE","Summary":"我是文章概述。","Picture":null,"Remark":null,"AbilityItemCode":0,"AbilityItemName":null,"CategoryCode":0,"CategoryName":null,"Level":1,"Price":10.699999809265137,"CreateDate":"2018-10-09T13:48:32.34"},{"DocumentCode":"e737109c-81de-4a6d-bf7d-58443cea2e00","DocumentType":1,"Title":"阅读理解第一篇","Summary":"当我还很小的时候","Picture":null,"Remark":null,"AbilityItemCode":0,"AbilityItemName":null,"CategoryCode":0,"CategoryName":null,"Level":1,"Price":0,"CreateDate":"2018-10-09T13:57:15.713"}]
          */
 
         private String result_code;
@@ -63,30 +62,43 @@ public class MyCollectionResult extends BaseHttpResult {
 
         public static class DataBean {
             /**
-             * DocumentCode :
-             * DocumentType : 2
-             * Title : 我是文章
-             * Picture : 我是文章
+             * DocumentCode : 541a2312-aa5e-49ed-af36-fa4b3e7d0e4c
+             * DocumentType : 1
+             * Title : THE LITTLE ICE AGE
+             * Summary : 我是文章概述。
+             * Picture : null
              * Remark : null
-             * AbilityItemCode : 80
-             * AbilityItemName : 语法
-             * CategoryCode : 1
-             * CategoryName : yasi
+             * AbilityItemCode : 0
+             * AbilityItemName : null
+             * CategoryCode : 0
+             * CategoryName : null
              * Level : 1
-             * Price : 10.7
+             * Price : 10.699999809265137
+             * CreateDate : 2018-10-09T13:48:32.34
              */
 
             private String DocumentCode;
             private int DocumentType;
             private String Title;
+            private String Summary;
             private String Picture;
-            private Object Remark;
+            private String Remark;
             private int AbilityItemCode;
             private String AbilityItemName;
             private int CategoryCode;
             private String CategoryName;
             private int Level;
             private double Price;
+            private String CreateDate;
+            private String PicturePath;
+
+            public String getPicturePath() {
+                return PicturePath;
+            }
+
+            public void setPicturePath(String picturePath) {
+                PicturePath = picturePath;
+            }
 
             public String getDocumentCode() {
                 return DocumentCode;
@@ -112,6 +124,14 @@ public class MyCollectionResult extends BaseHttpResult {
                 this.Title = Title;
             }
 
+            public String getSummary() {
+                return Summary;
+            }
+
+            public void setSummary(String Summary) {
+                this.Summary = Summary;
+            }
+
             public String getPicture() {
                 return Picture;
             }
@@ -120,11 +140,11 @@ public class MyCollectionResult extends BaseHttpResult {
                 this.Picture = Picture;
             }
 
-            public Object getRemark() {
+            public String getRemark() {
                 return Remark;
             }
 
-            public void setRemark(Object Remark) {
+            public void setRemark(String Remark) {
                 this.Remark = Remark;
             }
 
@@ -174,6 +194,14 @@ public class MyCollectionResult extends BaseHttpResult {
 
             public void setPrice(double Price) {
                 this.Price = Price;
+            }
+
+            public String getCreateDate() {
+                return CreateDate;
+            }
+
+            public void setCreateDate(String CreateDate) {
+                this.CreateDate = CreateDate;
             }
         }
     }

@@ -1,7 +1,11 @@
 package tools;
 
+import android.util.Log;
+
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Random;
 
 /**
@@ -12,21 +16,10 @@ public class MD5tools {
     public static String getSigh(String appid, String secret_key) throws Exception {
 
         //appid，保密字段，时间戳，随机字符串
-        String need = "123456" + "&" + "0af61531c6c04ac4ac910d0cd59e6238" + "&" + TimeUTCUtils.getUTCTimeStr() + "&" + getNonceStr();
+        String need = "123456" + "&" + TimeUTCUtils.getUTCTimeStr() + "&" + getNonceStr() + "&" + "0af61531c6c04ac4ac910d0cd59e6238";
 
-        try {
-            // 生成一个MD5加密计算摘要
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            // 计算md5函数
-            md.update(need.getBytes());
-            // digest()最后确定返回md5 hash值，返回值为8为字符串。因为md5 hash值是16位的hex值，实际上就是8位的字符
-            // BigInteger函数则将8位的字符串转换成16位hex值，用字符串来表示；得到字符串形式的hash值
-            String result = new BigInteger(1, md.digest()).toString(16);
-            return result.toUpperCase();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        Log.i("------",need+"");
+        return MD5(need).toUpperCase();
     }
 
     public static String getNonceStr() {
@@ -47,5 +40,25 @@ public class MD5tools {
         }
         //将承载的字符转换成字符串
         return sb.toString();
+    }
+
+    public static String MD5(String string) {
+
+        byte[] hash;
+        try {
+            hash = MessageDigest.getInstance("MD5").digest(string.getBytes("UTF-8"));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Huh, MD5 should be supported?", e);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("Huh, UTF-8 should be supported?", e);
+        }
+
+        StringBuilder hex = new StringBuilder(hash.length * 2);
+        for (byte b : hash) {
+            if ((b & 0xFF) < 0x10) hex.append("0");
+            hex.append(Integer.toHexString(b & 0xFF));
+        }
+        return hex.toString();
+
     }
 }

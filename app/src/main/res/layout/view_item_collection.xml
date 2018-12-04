@@ -1,67 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/ll_lesson_item"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/iv_book"
-            android:layout_width="108dp"
-            android:layout_height="61dp"
-            app:riv_corner_radius="2dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="11dp"
-            android:orientation="vertical">
+            android:layout_height="100dp"
+            android:background="@color/main_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
-            <TextView
-                android:id="@+id/tv_book_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:text="1222222222222"
-                android:textSize="16sp"
-                android:textColor="#333333"/>
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv_book"
+                android:layout_width="108dp"
+                android:layout_height="61dp"
+                app:riv_corner_radius="2dp" />
 
-            <TextView
-                android:id="@+id/tv_book_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:layout_marginTop="10dp"
-                android:text="1222222222222"
-                android:textSize="13sp"
-                android:textColor="#999999"/>
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginLeft="11dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:visibility="gone"
+                    android:id="@+id/tv_book_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textColor="#dedede"
+                    android:singleLine="true"
                     android:text=""
-                    android:layout_alignParentRight="true"/>
+                    android:textColor="#333333"
+                    android:textSize="16sp" />
 
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_book_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#999999"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_class_class_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/item_type_class"
+                        android:text=""
+                        android:textColor="#dedede"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_class_class_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_toRightOf="@+id/tv_class_class_name"
+                        android:background="@drawable/item_type_class"
+                        android:text=""
+                        android:textColor="#dedede"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
+        <include layout="@layout/item_divider_line" />
     </LinearLayout>
 
 </LinearLayout>

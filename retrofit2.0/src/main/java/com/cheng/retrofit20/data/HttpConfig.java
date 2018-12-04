@@ -15,6 +15,7 @@ public class HttpConfig {
     private final String SP_KEY_TEL = "user.tel";
     private final String SP_KEY_TYPE = "user.type";
     private final String SP_KEY_PWD = "user.pwd";
+    private final String SP_KEY_SESSIONKEY = "user.session.key";
     private SharedPreferences sp;
     private SharedPreferences.Editor mEditor;
 
@@ -69,6 +70,14 @@ public class HttpConfig {
 
     public void setUserPwd(String pwd) {
         mEditor.putString(SP_KEY_PWD, pwd).commit();
+    }
+
+    public String getUserSession() {
+        return sp.getString(SP_KEY_SESSIONKEY, "");
+    }
+
+    public void setUserSession(String session) {
+        mEditor.putString(SP_KEY_SESSIONKEY, session).commit();
     }
 
 }

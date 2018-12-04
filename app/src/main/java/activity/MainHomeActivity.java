@@ -1,27 +1,16 @@
 package activity;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-
-import com.alibaba.fastjson.JSON;
-import com.cheng.retrofit20.client.BaseHttpRequest;
-import com.cheng.retrofit20.client.BaseHttpResult;
 import com.example.qupengcheng.qingdaoeducation.R;
-
-import net.TestRequest;
-
-import java.util.HashMap;
 
 import fragment.HasBuyFragment;
 import fragment.HomePageFragment;
@@ -61,8 +50,6 @@ public class MainHomeActivity extends AppCompatActivity implements View.OnClickL
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.i("走不走",a.toString());
-        Log.i("走不走------",MD5tools.getNonceStr());
 
     }
 
@@ -88,6 +75,8 @@ public class MainHomeActivity extends AppCompatActivity implements View.OnClickL
         llStudy.setOnClickListener(this);
         llMyPage.setOnClickListener(this);
         llHasBuy.setOnClickListener(this);
+
+        changeFragment(homeFagment);
     }
 
     @Override

@@ -22,16 +22,17 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/main_text"
                 android:textSize="18sp"
-                android:text="1111111"/>
+                android:text=""/>
 
             <TextView
+                android:id="@+id/tv_user_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_user_name"
                 android:layout_marginTop="7dp"
                 android:textSize="12sp"
                 android:textColor="#999999"
-                android:text="1111111111111"/>
+                android:text=""/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -42,6 +43,7 @@
 
             <ImageView
                 android:id="@+id/iv_head_right"
+                android:visibility="gone"
                 style="@style/myItemIcon" />
 
         </RelativeLayout>
@@ -107,7 +109,8 @@
 
         <include layout="@layout/item_divider_line" />
 
-        <RelativeLayout style="@style/myItem">
+        <RelativeLayout android:id="@+id/rl_my_practice"
+            style="@style/myItem">
 
             <ImageView
                 android:id="@+id/iv_question_bank"
@@ -148,6 +151,7 @@
         <include layout="@layout/item_divider_line" />
 
         <RelativeLayout
+            android:id="@+id/rl_log_out"
             style="@style/myItem"
             android:layout_marginTop="7dp">
 

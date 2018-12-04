@@ -18,7 +18,7 @@ public class RetrofitClient {
                 //设置OKHttpClient
                 .client(OkHttpFactory.getOkHttpClient(context))
 
-                        //baseUrl
+                        //baseUrl http://2nz1067951.iask.in:49206/Help
                 .baseUrl("http://2nz1067951.iask.in:49206/")
 
                         //gson转化器

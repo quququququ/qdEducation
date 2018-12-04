@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/view_activity_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingTop="8dp"
+        android:background="@color/main_white"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:id="@+id/ll_all_order"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_all_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/main_blue"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="全部订单"/>
+
+            <TextView
+                android:id="@+id/tv_all_order_line"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:background="@color/main_blue"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_wait_pay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_wait_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c2"
+                android:textSize="15sp"
+                android:text="待支付"/>
+
+            <TextView
+                android:id="@+id/tv_wait_pay_line"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:visibility="invisible"
+                android:background="@color/main_blue"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_order_succes"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_order_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c2"
+                android:textSize="15sp"
+                android:text="交易成功"/>
+
+            <TextView
+                android:id="@+id/tv_order_success_line"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:visibility="invisible"
+                android:background="@color/main_blue"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_order_fail"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_order_fail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c2"
+                android:textSize="15sp"
+                android:text="交易关闭"/>
+
+            <TextView
+                android:id="@+id/tv_order_fail_line"
+                android:layout_width="25dp"
+                android:layout_height="2dp"
+                android:visibility="invisible"
+                android:background="@color/main_blue"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e8e8e8" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/main_bg"/>
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/bga_my_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_white">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_my_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
+</LinearLayout>

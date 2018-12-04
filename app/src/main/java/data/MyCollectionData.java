@@ -62,6 +62,24 @@ public class MyCollectionData {
         private int Level;
         private double Price;
         private int type;
+        private String Summary;
+        private String PicturePath;
+
+        public String getPicturePath() {
+            return PicturePath;
+        }
+
+        public void setPicturePath(String picturePath) {
+            PicturePath = picturePath;
+        }
+
+        public String getSummary() {
+            return Summary;
+        }
+
+        public void setSummary(String summary) {
+            Summary = summary;
+        }
 
         public int getType() {
             return type;

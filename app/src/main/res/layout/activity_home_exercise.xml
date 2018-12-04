@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_activity_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    style="@style/ExerciseText"
+                    android:text="等级" />
+
+                <RadioGroup
+                    android:id="@+id/rg_grade_one"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="15dp">
+
+                    <RadioButton
+                        android:id="@+id/btn_grade_one"
+                        style="@style/ExerciseSelectBtn"
+                        android:checked="true"
+                        android:text="等级1" />
+
+                    <RadioButton
+                        android:id="@+id/btn_grade_two"
+                        style="@style/ExerciseSelectBtn"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="等级2"/>
+
+                    <RadioButton
+                        android:id="@+id/btn_grade_three"
+                        style="@style/ExerciseSelectBtn"
+                        android:text="等级3" />
+
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/rg_grade_two"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="13dp">
+
+                    <RadioButton
+                        android:id="@+id/btn_grade_four"
+                        style="@style/ExerciseSelectBtn"
+                        android:text="等级4"/>
+
+                    <RadioButton
+                        android:id="@+id/btn_grade_five"
+                        style="@style/ExerciseSelectBtn"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="等级5" />
+
+                    <RadioButton
+                        style="@style/ExerciseSelectBtn"
+                        android:text="等级3"
+                        android:visibility="invisible" />
+
+                </RadioGroup>
+
+                <TextView
+                    style="@style/ExerciseText"
+                    android:text="题型" />
+
+                <RadioGroup
+                    android:id="@+id/rg_exercise_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/btn_type_one"
+                        style="@style/ExerciseSelectBtn"
+                        android:text="选择题"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:id="@+id/btn_type_two"
+                        style="@style/ExerciseSelectBtn"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="填写题" />
+
+                    <RadioButton
+                        android:id="@+id/btn_type_three"
+                        style="@style/ExerciseSelectBtn"
+                        android:text="阅读理解" />
+
+                </RadioGroup>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/ExerciseText"
+                        android:text="题数" />
+
+                    <TextView
+                        android:id="@+id/tv_exercise_select_num"
+                        style="@style/ExerciseText"
+                        android:layout_alignParentRight="true"
+                        android:text="20题"
+                        android:textColor="@color/main_blue" />
+                </RelativeLayout>
+
+                <SeekBar
+                    android:id="@+id/sb_my_exercise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:max="100"
+                    android:maxHeight="3dp"
+                    android:minHeight="2dp"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="3dp"
+                    android:progress="25"
+                    android:progressDrawable="@drawable/exercise_seekbar"
+                    android:thumb="@drawable/seekbar_shape_oval" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="10"
+                        android:textColor="@color/c2"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="20"
+                        android:textColor="@color/c2"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="50"
+                        android:textColor="@color/c2"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="80"
+                            android:textColor="@color/c2"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="不限"
+                            android:textColor="@color/c2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/ExerciseText"
+                        android:text="课目类别" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="22dp"
+                        android:text="(可复选)"
+                        android:textColor="@color/c3"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rg_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/btn_class_one"
+                        style="@style/ExerciseSelectBtnTwo"
+                        android:text="听力"
+                        android:textColor="@color/c1" />
+
+                    <CheckBox
+                        android:id="@+id/btn_class_two"
+                        style="@style/ExerciseSelectBtnTwo"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="口语"
+                        android:textColor="@color/c1" />
+
+                    <CheckBox
+                        android:id="@+id/btn_class_three"
+                        style="@style/ExerciseSelectBtnTwo"
+                        android:text="阅读"
+                        android:textColor="@color/c1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rg_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="13dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/btn_class_four"
+                        style="@style/ExerciseSelectBtnTwo"
+                        android:text="写作"
+                        android:textColor="@color/c1" />
+
+                    <CheckBox
+                        android:id="@+id/btn_class_five"
+                        style="@style/ExerciseSelectBtnTwo"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="语法"
+                        android:textColor="@color/c1" />
+
+                    <CheckBox
+                        android:id="@+id/btn_class_six"
+                        style="@style/ExerciseSelectBtnTwo"
+                        android:text="词汇"
+                        android:textColor="@color/c1" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_to_test"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/common_button_exercise"
+            android:text="进入测试"
+            android:textColor="@color/main_white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</LinearLayout>

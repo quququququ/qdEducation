@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/sl_home_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="vertical">
+
+                    <com.youth.banner.Banner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </com.youth.banner.Banner>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:background="@drawable/dr_main_top_bg"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/iv_to_search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:paddingLeft="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/search" />
+
+                        <EditText
+                            android:id="@+id/et_search_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="50px"
+                            android:background="@null"
+                            android:hint="请输入你要搜索的内容"
+                            android:textColor="#ffffff"
+                            android:textColorHint="#ffffff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    android:background="@color/main_white">
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_exercises"
+                        style="@style/homeBtnStyle">
+
+                        <ImageView
+                            style="@style/homeIcon"
+                            android:src="@drawable/home_exercises" />
+
+                        <TextView
+                            style="@style/homeIconText"
+                            android:text="练习题" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_free_lessons"
+                        style="@style/homeBtnStyle">
+
+                        <ImageView
+                            style="@style/homeIcon"
+                            android:src="@drawable/home_free_experience" />
+
+                        <TextView
+                            style="@style/homeIconText"
+                            android:text="免费体验" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_price_lessons"
+                        style="@style/homeBtnStyle">
+
+                        <ImageView
+                            style="@style/homeIcon"
+                            android:src="@drawable/home_high_quality" />
+
+                        <TextView
+                            style="@style/homeIconText"
+                            android:text="付费精品" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_all_lesson"
+                        style="@style/homeBtnStyle">
+
+                        <ImageView
+                            style="@style/homeIcon"
+                            android:src="@drawable/home_all" />
+
+                        <TextView
+                            style="@style/homeIconText"
+                            android:text="全部课程" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e8e8e8" />
+
+                <LinearLayout
+                    android:id="@+id/ll_type_lessons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/ll_all_type_lesson"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="21dp"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="课目类别"
+                            android:textColor="#666666"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="查看全部"
+                            android:textColor="#999999"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <tools.MyGridView
+                        android:id="@+id/gv_lesson_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnWidth="105dp"
+                        android:horizontalSpacing="13dp"
+                        android:numColumns="3"
+                        android:stretchMode="spacingWidthUniform"
+                        android:verticalSpacing="16dp">
+
+                    </tools.MyGridView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout style="@style/classType">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/home_hearing" />
+
+                            <TextView
+                                style="@style/classTypeText"
+                                android:text="听力" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/classType">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/home_spoken" />
+
+                            <TextView
+                                style="@style/classTypeText"
+                                android:text="口语" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/classType">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/home_read" />
+
+                            <TextView
+                                style="@style/classTypeText"
+                                android:text="阅读" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="13dp"
+                        android:visibility="gone">
+
+                        <LinearLayout style="@style/classType">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/home_write" />
+
+                            <TextView
+                                style="@style/classTypeText"
+                                android:text="写作" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/classType">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/home_grammar" />
+
+                            <TextView
+                                style="@style/classTypeText"
+                                android:text="语法" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/classType">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/home_words" />
+
+                            <TextView
+                                style="@style/classTypeText"
+                                android:text="词汇" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="7.5dp"
+                    android:layout_marginBottom="23dp"
+                    android:layout_marginTop="25dp"
+                    android:background="#f8f8f8" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="21dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最新课程"
+                        android:textColor="#666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_all_last_lesson"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="查看全部"
+                        android:textColor="#999999"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <tools.ListViewForScrollView
+                    android:id="@+id/lv_last_courses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"></tools.ListViewForScrollView>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="7.5dp"
+                    android:layout_marginBottom="23dp"
+                    android:layout_marginTop="25dp"
+                    android:background="#f8f8f8" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="21dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="推荐课程"
+                        android:textColor="#666666"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_all_free_lesson"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="查看全部"
+                        android:textColor="#999999"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <tools.ListViewForScrollView
+                    android:id="@+id/lv_free_courses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"></tools.ListViewForScrollView>
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/tv_to_my_order"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/shoppingcar" />
+    </RelativeLayout>
+</LinearLayout>

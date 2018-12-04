@@ -34,6 +34,9 @@ public class RandomCodeBinding implements IUiDataBinding<RandomCodeData, RandomC
         RandomCodeData data = new RandomCodeData();
 
         data.setResult_code(mResult.getBaseResponseResult().getResult_code());
+        if (mResult.getBaseResponseResult().getResult_msg().equals("FAIL")) {
+            return data;
+        }
         data.setResult_msg(mResult.getBaseResponseResult().getResult_msg());
         data.setRandomCode(mResult.getBaseResponseResult().getData().getRandomCode());
         return data;

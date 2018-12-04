@@ -7,13 +7,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MainActivity">
 
         </activity>
 
         <activity
-            android:name="activity.MainHomeActivity"
+            android:name="activity.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +22,70 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="activity.MyCollecttionActivity"
-            android:screenOrientation="portrait">
+        <activity
+            android:name="activity.MyCollecttionActivity"
+            android:screenOrientation="portrait"></activity>
 
-        </activity>
+        <activity
+            android:name="activity.UserRegisterNextActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.UserRegisterActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.MainHomeActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.ChangePswActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.HomeExerciseActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.MyOrderActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="activity.FreeLessonsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.LessonDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.ArticleDetailActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.ArticleVideoActivity"
+            android:configChanges="orientation|touchscreen|keyboardHidden"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.TestExerciseActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="activity.MediaPlayActivity"
+            android:configChanges="orientation|touchscreen|keyboardHidden"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="activity.PracticeListactivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="activity.ArticleDetailNewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="activity.HomeExerciseNewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="activity.ReadAnswerActivity"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

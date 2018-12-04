@@ -32,7 +32,7 @@ public class RandomCodeRequest extends BaseHttpRequest<RandomCodeData> {
 
     private RequestParams getParams(String data) {
         RequestParams parameters = new RequestParams();
-        parameters.putParams(GetRandomCodeCmd.KEY_BODY, data);
+        parameters.putParams(GetRandomCodeCmd.BODY, data);
         return parameters;
     }
 

@@ -14,6 +14,6 @@ public class TimeUTCUtils {
 
     public static String getUTCTimeStr() throws Exception {
         Calendar cal = Calendar.getInstance();
-        return String.valueOf(cal.getTimeInMillis() / 1000+86400);// 返回的就是UTC时间
+        return String.valueOf(cal.getTimeInMillis());// 返回的就是UTC时间
     }
 }

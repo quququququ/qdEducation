@@ -7,4 +7,11 @@
     <color name="main_text">#333333</color>
     <color name="main_white">#ffffff</color>
     <color name="main_blue">#6692ff</color>
+    <color name="c1">#333333</color>
+    <color name="c2">#666666</color>
+    <color name="c3">#999999</color>
+    <color name="c4">#fbfbfb</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white2">#f5f3f3</color>
+    <color name="colorRed">#d50f09</color>
 </resources>

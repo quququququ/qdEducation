@@ -10,7 +10,7 @@ public class RegisterResult extends BaseHttpResult {
 
 
     /**
-     * BaseResponseResult : {"result_code":"SUCCESS","result_msg":"","Data":{"SessionKey":"","LoginUser":{"UserId":"4e95aefa-d577-49e1-91b1-0db65d714151","LoginName":"admin","Password":"","PhoneNumber":"111","DisplayName":"管理员","IsActive":true,"Sex":"f"}}}
+     * BaseResponseResult : {"result_code":"SUCCESS","result_msg":"","Data":{"Code":"07258030-cc81-4ed2-b199-c64f9a6f46e1","UserName":"quququququ","NickName":"","UserType":0,"Password":"","IsActived":true,"Sex":"f","Age":0,"PhoneNumber":"17602192840","Remark":null,"CreateBy":"android client","CreateDate":"0001-01-01T00:00:00","ModifyBy":null,"ModifyDate":"0001-01-01T00:00:00"}}
      */
 
     private BaseResponseResultBean BaseResponseResult;
@@ -27,7 +27,7 @@ public class RegisterResult extends BaseHttpResult {
         /**
          * result_code : SUCCESS
          * result_msg :
-         * Data : {"SessionKey":"","LoginUser":{"UserId":"4e95aefa-d577-49e1-91b1-0db65d714151","LoginName":"admin","Password":"","PhoneNumber":"111","DisplayName":"管理员","IsActive":true,"Sex":"f"}}
+         * Data : {"Code":"07258030-cc81-4ed2-b199-c64f9a6f46e1","UserName":"quququququ","NickName":"","UserType":0,"Password":"","IsActived":true,"Sex":"f","Age":0,"PhoneNumber":"17602192840","Remark":null,"CreateBy":"android client","CreateDate":"0001-01-01T00:00:00","ModifyBy":null,"ModifyDate":"0001-01-01T00:00:00"}
          */
 
         private String result_code;
@@ -60,103 +60,147 @@ public class RegisterResult extends BaseHttpResult {
 
         public static class DataBean {
             /**
-             * SessionKey :
-             * LoginUser : {"UserId":"4e95aefa-d577-49e1-91b1-0db65d714151","LoginName":"admin","Password":"","PhoneNumber":"111","DisplayName":"管理员","IsActive":true,"Sex":"f"}
+             * Code : 07258030-cc81-4ed2-b199-c64f9a6f46e1
+             * UserName : quququququ
+             * NickName :
+             * UserType : 0
+             * Password :
+             * IsActived : true
+             * Sex : f
+             * Age : 0
+             * PhoneNumber : 17602192840
+             * Remark : null
+             * CreateBy : android client
+             * CreateDate : 0001-01-01T00:00:00
+             * ModifyBy : null
+             * ModifyDate : 0001-01-01T00:00:00
              */
 
-            private String SessionKey;
-            private LoginUserBean LoginUser;
+            private String Code;
+            private String UserName;
+            private String NickName;
+            private int UserType;
+            private String Password;
+            private boolean IsActived;
+            private String Sex;
+            private int Age;
+            private String PhoneNumber;
+            private Object Remark;
+            private String CreateBy;
+            private String CreateDate;
+            private Object ModifyBy;
+            private String ModifyDate;
 
-            public String getSessionKey() {
-                return SessionKey;
+            public String getCode() {
+                return Code;
             }
 
-            public void setSessionKey(String SessionKey) {
-                this.SessionKey = SessionKey;
+            public void setCode(String Code) {
+                this.Code = Code;
             }
 
-            public LoginUserBean getLoginUser() {
-                return LoginUser;
+            public String getUserName() {
+                return UserName;
             }
 
-            public void setLoginUser(LoginUserBean LoginUser) {
-                this.LoginUser = LoginUser;
+            public void setUserName(String UserName) {
+                this.UserName = UserName;
             }
 
-            public static class LoginUserBean {
-                /**
-                 * UserId : 4e95aefa-d577-49e1-91b1-0db65d714151
-                 * LoginName : admin
-                 * Password :
-                 * PhoneNumber : 111
-                 * DisplayName : 管理员
-                 * IsActive : true
-                 * Sex : f
-                 */
+            public String getNickName() {
+                return NickName;
+            }
 
-                private String UserId;
-                private String LoginName;
-                private String Password;
-                private String PhoneNumber;
-                private String DisplayName;
-                private boolean IsActive;
-                private String Sex;
+            public void setNickName(String NickName) {
+                this.NickName = NickName;
+            }
 
-                public String getUserId() {
-                    return UserId;
-                }
+            public int getUserType() {
+                return UserType;
+            }
 
-                public void setUserId(String UserId) {
-                    this.UserId = UserId;
-                }
+            public void setUserType(int UserType) {
+                this.UserType = UserType;
+            }
 
-                public String getLoginName() {
-                    return LoginName;
-                }
+            public String getPassword() {
+                return Password;
+            }
 
-                public void setLoginName(String LoginName) {
-                    this.LoginName = LoginName;
-                }
+            public void setPassword(String Password) {
+                this.Password = Password;
+            }
 
-                public String getPassword() {
-                    return Password;
-                }
+            public boolean isIsActived() {
+                return IsActived;
+            }
 
-                public void setPassword(String Password) {
-                    this.Password = Password;
-                }
+            public void setIsActived(boolean IsActived) {
+                this.IsActived = IsActived;
+            }
 
-                public String getPhoneNumber() {
-                    return PhoneNumber;
-                }
+            public String getSex() {
+                return Sex;
+            }
 
-                public void setPhoneNumber(String PhoneNumber) {
-                    this.PhoneNumber = PhoneNumber;
-                }
+            public void setSex(String Sex) {
+                this.Sex = Sex;
+            }
 
-                public String getDisplayName() {
-                    return DisplayName;
-                }
+            public int getAge() {
+                return Age;
+            }
 
-                public void setDisplayName(String DisplayName) {
-                    this.DisplayName = DisplayName;
-                }
+            public void setAge(int Age) {
+                this.Age = Age;
+            }
 
-                public boolean isIsActive() {
-                    return IsActive;
-                }
+            public String getPhoneNumber() {
+                return PhoneNumber;
+            }
 
-                public void setIsActive(boolean IsActive) {
-                    this.IsActive = IsActive;
-                }
+            public void setPhoneNumber(String PhoneNumber) {
+                this.PhoneNumber = PhoneNumber;
+            }
 
-                public String getSex() {
-                    return Sex;
-                }
+            public Object getRemark() {
+                return Remark;
+            }
 
-                public void setSex(String Sex) {
-                    this.Sex = Sex;
-                }
+            public void setRemark(Object Remark) {
+                this.Remark = Remark;
+            }
+
+            public String getCreateBy() {
+                return CreateBy;
+            }
+
+            public void setCreateBy(String CreateBy) {
+                this.CreateBy = CreateBy;
+            }
+
+            public String getCreateDate() {
+                return CreateDate;
+            }
+
+            public void setCreateDate(String CreateDate) {
+                this.CreateDate = CreateDate;
+            }
+
+            public Object getModifyBy() {
+                return ModifyBy;
+            }
+
+            public void setModifyBy(Object ModifyBy) {
+                this.ModifyBy = ModifyBy;
+            }
+
+            public String getModifyDate() {
+                return ModifyDate;
+            }
+
+            public void setModifyDate(String ModifyDate) {
+                this.ModifyDate = ModifyDate;
             }
         }
     }
